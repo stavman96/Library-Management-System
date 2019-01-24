@@ -5,7 +5,12 @@
         <group>
             <file>file:/C:/Users/stavm/Desktop/library/src/library/Library.java</file>
             <file>file:/C:/Users/stavm/Desktop/library/src/ui/Home.java</file>
+            <file>file:/C:/Users/stavm/Desktop/library/src/ui/AddMember.java</file>
+            <file>file:/C:/Users/stavm/Desktop/library/src/ui/AddBook.java</file>
+            <file>file:/C:/Users/stavm/Desktop/library/src/ui/Borrow.java</file>
             <file>file:/C:/Users/stavm/Desktop/library/src/library/Reader.java</file>
+            <file>file:/C:/Users/stavm/Desktop/library/src/ui/Return.java</file>
+            <file>file:/C:/Users/stavm/Desktop/library/src/ui/DatabaseConnect.java</file>
             <file>file:/C:/Users/stavm/Desktop/library/src/library/Publisher.java</file>
             <file>file:/C:/Users/stavm/Desktop/library/src/library/Author.java</file>
             <file>file:/C:/Users/stavm/Desktop/library/src/library/Book.java</file>

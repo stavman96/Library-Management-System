@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 package ui;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,8 +19,10 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    Connection connect=null;
     public Home() {
         initComponents();
+        connect=DatabaseConnect.connect();
     }
 
     /**
@@ -65,16 +72,36 @@ public class Home extends javax.swing.JFrame {
         jLabel3.setText("Library");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 34, 140, 40));
 
-        jButton1.setText("Button1");
+        jButton1.setText("Add Members");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 140, -1));
 
-        jButton2.setText("Button2");
+        jButton2.setText("Add Books");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 140, -1));
 
-        jButton3.setText("Button3");
+        jButton3.setText("Borrow Books");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 140, -1));
 
-        jButton4.setText("Button4");
+        jButton4.setText("Return Books");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 140, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,6 +122,30 @@ public class Home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       jDesktopPane1.removeAll();
+       AddMember m1= new AddMember();
+       jDesktopPane1.add(m1).setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       jDesktopPane1.removeAll();
+       AddBook b1= new AddBook();
+       jDesktopPane1.add(b1).setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       jDesktopPane1.removeAll();
+       Borrow b1= new Borrow();
+       jDesktopPane1.add(b1).setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       jDesktopPane1.removeAll();
+       Return r1= new Return();
+       jDesktopPane1.add(r1).setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
