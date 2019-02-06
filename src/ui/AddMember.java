@@ -98,6 +98,11 @@ public class AddMember extends javax.swing.JInternalFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 130, 120, -1));
 
         jButton2.setText("Update Member");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 120, -1));
 
         jButton3.setText("Delete Member");
@@ -149,6 +154,23 @@ public class AddMember extends javax.swing.JInternalFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String m1= memberid.getText();
+        String n1= name.getText();
+        String l1= lastname.getText();
+        String v1= vat.getText();
+        
+        try {
+            String sql= "UPDATE `readers` SET `fname`='"+n1+"',`lname`='"+l1+"',`vat`='"+v1+"' WHERE id='"+m1+"'";
+            PreparedStatement pst= (PreparedStatement) connect.prepareStatement(sql);
+            pst.execute();
+        }
+        
+        catch (Exception e) {
+             JOptionPane.showMessageDialog(rootPane,e);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
